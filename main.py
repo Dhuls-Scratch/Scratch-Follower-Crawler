@@ -12,8 +12,6 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 from scratchclient import ScratchSession
-import requests
-import json
 print("Username?")
 s_user = input()
 print("Password?")
@@ -21,5 +19,9 @@ s_pass = input()
 session = ScratchSession(s_user, s_pass)
 print("Crawl who's followers?")
 s_target = input()
-s_targetdb = requests.get("https://scratchdb.lefty.one/v3/user/info/%s" % s_target)
-print(s_targetdb)
+count = 0
+usersids = {}
+while count < len(session.get_user(s_target).get_followers(all=True)):
+    usersids[session.get_user(session.get_user(s_target).get_followers(limit=1, offset=count))] = session.get_user(session.get_user(s_target).get_followers(limit=1, offset=count)).id
+    count = count + 1
+    print(usersids)
