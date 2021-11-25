@@ -1,5 +1,5 @@
 # Scratch-Follower-Crawler
-Crawls Followers for their user id
+Crawls Followers for their user id. Not finished.
 # License
 Copyright 2021 Dhuls-Scratch
     
