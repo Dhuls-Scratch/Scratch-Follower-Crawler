@@ -22,6 +22,6 @@ s_target = input()
 count = 0
 usersids = {}
 while count < len(session.get_user(s_target).get_followers(all=True)):
-    usersids[session.get_user(session.get_user(s_target).get_followers(limit=1, offset=count))] = session.get_user(session.get_user(s_target).get_followers(limit=1, offset=count)).id
+    usersids[session.get_user(session.get_user(s_target).get_followers(limit=1, offset=count)).username] = session.get_user(session.get_user(s_target).get_followers(limit=1, offset=count)).id
     count = count + 1
     print(usersids)
