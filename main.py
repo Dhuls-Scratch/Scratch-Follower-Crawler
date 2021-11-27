@@ -12,11 +12,9 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 from scratchclient import ScratchSession
+from getpass import getpass
 print("Username?")
-s_user = input()
-print("Password?")
-s_pass = input()
-session = ScratchSession(s_user, s_pass)
+session = ScratchSession(input(), getpass(prompt='Password: '))
 print("Crawl who's followers?")
 s_target = input()
 count = 0
